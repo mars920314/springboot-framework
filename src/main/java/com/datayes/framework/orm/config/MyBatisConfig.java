@@ -35,8 +35,16 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
 	private DataSource dataSourceDatayesdb;
 	
 	@Autowired
+	@Qualifier("DataSourceRPT")
+	private DataSource dataSourceRPT;
+	
+	@Autowired
 	@Qualifier("DataSourceJYdb")
 	private DataSource dataSourceJYdb;
+	
+	@Autowired
+	@Qualifier("DataSourceZYYX")
+	private DataSource dataSourceZYYX;
 
 	@Bean(name = "TransactionManager")
 	@Primary
@@ -44,9 +52,11 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
 	public PlatformTransactionManager annotationDrivenTransactionManager() {
         DataSourceTransactionManager dtmNews = new DataSourceTransactionManager(dataSourceNews);  
         DataSourceTransactionManager dtmBigdata = new DataSourceTransactionManager(dataSourceBigdata);
-        DataSourceTransactionManager dtmDatayesdb = new DataSourceTransactionManager(dataSourceDatayesdb);  
+        DataSourceTransactionManager dtmDatayesdb = new DataSourceTransactionManager(dataSourceDatayesdb);
+        DataSourceTransactionManager dtmRPT = new DataSourceTransactionManager(dataSourceRPT);
         DataSourceTransactionManager dtmJYdb = new DataSourceTransactionManager(dataSourceJYdb);
-        ChainedTransactionManager ctm = new ChainedTransactionManager(dtmNews, dtmBigdata, dtmDatayesdb, dtmJYdb);
+        DataSourceTransactionManager dtmZYYX = new DataSourceTransactionManager(dataSourceZYYX);
+        ChainedTransactionManager ctm = new ChainedTransactionManager(dtmNews, dtmBigdata, dtmDatayesdb, dtmRPT, dtmJYdb, dtmZYYX);
 		return ctm;
 	}
 }

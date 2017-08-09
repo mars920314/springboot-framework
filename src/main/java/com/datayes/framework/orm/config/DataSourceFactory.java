@@ -42,9 +42,21 @@ public class DataSourceFactory {
 //		return DataSourceBuilder.create().build();
 //	}
 //
+//	@Bean(name = "DataSourceRPT")
+//	@ConfigurationProperties(prefix = "rpt.dev.jdbc")
+//	public DataSource DataSourceRPT() {
+//		return DataSourceBuilder.create().build();
+//	}
+//
 //	@Bean(name = "DataSourceJYdb")
 //	@ConfigurationProperties(prefix = "jydb.dev.jdbc")
 //	public DataSource DataSourceJYdb() {
+//		return DataSourceBuilder.create().build();
+//	}
+//
+//	@Bean(name = "DataSourceZYYX")
+//	@ConfigurationProperties(prefix = "zyyx.dev.jdbc")
+//	public DataSource DataSourceZYYX() {
 //		return DataSourceBuilder.create().build();
 //	}
 
@@ -112,6 +124,27 @@ public class DataSourceFactory {
 		return DataSourceBuilder.create().build();
 	}
 
+	@Bean(name = "DataSourceRPT")
+	@ConditionalOnExpression("'${environment}'=='dev'")
+	@ConfigurationProperties(prefix = "rpt.dev.jdbc")
+	public DataSource DataSourceRPTDev() {
+		return DataSourceBuilder.create().build();
+	}
+
+	@Bean(name = "DataSourceRPT")
+	@ConditionalOnExpression("'${environment}'=='stg'")
+	@ConfigurationProperties(prefix = "rpt.stg.jdbc")
+	public DataSource DataSourceRPTStg() {
+		return DataSourceBuilder.create().build();
+	}
+
+	@Bean(name = "DataSourceRPT")
+	@ConditionalOnExpression("'${environment}'=='prd'")
+	@ConfigurationProperties(prefix = "rpt.prd.jdbc")
+	public DataSource DataSourceRPTPrd() {
+		return DataSourceBuilder.create().build();
+	}
+
 	@Bean(name = "DataSourceJYdb")
 	@ConditionalOnExpression("'${environment}'=='dev'")
 	@ConfigurationProperties(prefix = "jydb.dev.jdbc")
@@ -130,6 +163,27 @@ public class DataSourceFactory {
 	@ConditionalOnExpression("'${environment}'=='prd'")
 	@ConfigurationProperties(prefix = "jydb.prd.jdbc")
 	public DataSource DataSourceJYdbPrd() {
+		return DataSourceBuilder.create().build();
+	}
+
+	@Bean(name = "DataSourceZYYX")
+	@ConditionalOnExpression("'${environment}'=='dev'")
+	@ConfigurationProperties(prefix = "zyyx.dev.jdbc")
+	public DataSource DataSourceZYYXDev() {
+		return DataSourceBuilder.create().build();
+	}
+
+	@Bean(name = "DataSourceZYYX")
+	@ConditionalOnExpression("'${environment}'=='stg'")
+	@ConfigurationProperties(prefix = "zyyx.stg.jdbc")
+	public DataSource DataSourceZYYXStg() {
+		return DataSourceBuilder.create().build();
+	}
+
+	@Bean(name = "DataSourceZYYX")
+	@ConditionalOnExpression("'${environment}'=='prd'")
+	@ConfigurationProperties(prefix = "zyyx.prd.jdbc")
+	public DataSource DataSourceZYYXPrd() {
 		return DataSourceBuilder.create().build();
 	}
 
