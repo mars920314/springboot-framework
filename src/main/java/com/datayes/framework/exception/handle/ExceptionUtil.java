@@ -1,9 +1,9 @@
 package com.datayes.framework.exception.handle;
 
-import com.datayes.framework.common.RrpConstant;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.datayes.framework.common.RrpConstant;
 
 public class ExceptionUtil {
     public static String getRequestId(HttpServletRequest request, HttpServletResponse response, String exceptionRequestId) {
