@@ -1,12 +1,13 @@
 package com.datayes.framework;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Web 类型应用入口，对外提供FE接口

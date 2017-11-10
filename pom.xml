@@ -4,7 +4,7 @@
 
   <groupId>com.datayes</groupId>
   <artifactId>springboot-framework</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.3-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>springboot-framework</name>
@@ -84,14 +84,14 @@
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-tx</artifactId>
 	</dependency>
-       <dependency>
-           <groupId>org.springframework</groupId>
-           <artifactId>spring-jdbc</artifactId>
-       </dependency>
-       <dependency>
-           <groupId>org.apache.tomcat</groupId>
-           <artifactId>tomcat-jdbc</artifactId>
-       </dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jdbc</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.tomcat</groupId>
+	    <artifactId>tomcat-jdbc</artifactId>
+	</dependency>
        <!-- for ChainedTransactionManager configuration -->
 	<dependency>
         <groupId>org.springframework.data</groupId>  
@@ -101,6 +101,22 @@
 	<dependency>
 	    <groupId>org.springframework.boot</groupId>
 	    <artifactId>spring-boot-starter-log4j2</artifactId>
+	</dependency>
+	<!-- 该依赖必加，里面有sping对schedule的支持 -->  
+	<dependency>
+		<groupId>org.springframework</groupId>  
+		<artifactId>spring-context-support</artifactId>  
+	</dependency> 
+	<dependency>
+	    <groupId>org.quartz-scheduler</groupId>
+	    <artifactId>quartz</artifactId>
+	    <version>2.2.1</version>
+		<exclusions>  
+		    <exclusion>  
+		        <groupId>org.slf4j</groupId>  
+		        <artifactId>slf4j-api</artifactId>  
+		    </exclusion>  
+		</exclusions>
 	</dependency>
 	
 	<!-- 		<dependency>
