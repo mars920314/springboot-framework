@@ -115,7 +115,7 @@
 		    <exclusion>  
 		        <groupId>org.slf4j</groupId>  
 		        <artifactId>slf4j-api</artifactId>  
-		    </exclusion>  
+		    </exclusion>
 		</exclusions>
 	</dependency>
 	
@@ -138,13 +138,11 @@
 	<dependency>
 	    <groupId>com.microsoft.sqlserver</groupId>
 	    <artifactId>mssql-jdbc</artifactId>
-	    <version>6.1.0.jre8</version>
 	</dependency>
 	
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
       <scope>test</scope>
     </dependency>
     

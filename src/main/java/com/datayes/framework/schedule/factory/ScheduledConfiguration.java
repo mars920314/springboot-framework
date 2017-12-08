@@ -1,6 +1,7 @@
 package com.datayes.framework.schedule.factory;
 
 import org.quartz.Trigger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.expression.ParseException;
@@ -10,7 +11,7 @@ import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 
 import com.datayes.framework.schedule.HelloJob;
 
-@Configuration
+//@Configuration
 public class ScheduledConfiguration {
 
     /** 
@@ -20,7 +21,7 @@ public class ScheduledConfiguration {
      * ScheduleTask为需要执行的任务  
      */  
     @Bean(name = "jobDetailBean")  
-    public MethodInvokingJobDetailFactoryBean detailFactoryBean(HelloJob job) {
+    public MethodInvokingJobDetailFactoryBean detailFactoryBean(HelloJob helloJob) {
         MethodInvokingJobDetailFactoryBean jobDetail = new MethodInvokingJobDetailFactoryBean();
         /* 
          *  是否并发执行 
@@ -39,7 +40,7 @@ public class ScheduledConfiguration {
         /* 
          * 为需要执行的实体类对应的对象 
          */  
-        jobDetail.setTargetObject(job);  
+        jobDetail.setTargetObject(helloJob);  
           
         /* 
          * 指定需要定时执行scheduleInfoAction中的simpleJobTest()方法
