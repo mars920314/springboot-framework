@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+
+    <!-- configure logger level -->
+    <logger name="com.datayes" level="DEBUG"/>
+    <logger name="org.springframework" level="INFO"/>
+
+    <include resource="logging/logback-base.xml"/>
+
+    <!--<root level="DEBUG"/>-->
+
+</configuration>

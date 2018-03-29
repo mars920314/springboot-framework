@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+
+    <!-- access_debug filter, /api prefix only, css/html/js file content will not be logged  -->
+    <!--<property name="logging.access_debug_uri_prefix" value="/"/>-->
+
+    <include resource="logging/logback-access-base.xml"/>
+</configuration>

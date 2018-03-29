@@ -4,7 +4,7 @@
 
   <groupId>com.datayes</groupId>
   <artifactId>springboot-framework</artifactId>
-  <version>0.1.0-${BUILD_NUMBER}</version>
+  <version>0.1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>springboot-framework</name>
@@ -28,35 +28,35 @@
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
-           <exclusions>
+           <!-- <exclusions>
                <exclusion>
                    <groupId>org.springframework.boot</groupId>
                    <artifactId>spring-boot-starter-logging</artifactId>
                </exclusion>
-           </exclusions>
+           </exclusions> -->
     </dependency>
     <!-- tag::actuator[] -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-actuator</artifactId>
-		  <exclusions>
+		  <!-- <exclusions>
 		    <exclusion>
 		      <groupId>org.springframework.boot</groupId>
 		      <artifactId>spring-boot-starter-logging</artifactId>
 		    </exclusion>
-		  </exclusions>
+		  </exclusions> -->
     </dependency>
     <!-- end::actuator[] -->
     <!-- tag::tests[] -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-test</artifactId>
-		  <exclusions>
+		  <!-- <exclusions>
 		    <exclusion>
 		      <groupId>org.springframework.boot</groupId>
 		      <artifactId>spring-boot-starter-logging</artifactId>
 		    </exclusion>
-		  </exclusions>
+		  </exclusions> -->
         <scope>test</scope>
     </dependency>
     <!-- end::tests[] -->
@@ -72,11 +72,6 @@
         <groupId>org.springframework.data</groupId>  
         <artifactId>spring-data-commons</artifactId>  
    	</dependency> 
-	<!-- logs -->
-	<dependency>
-	    <groupId>org.springframework.boot</groupId>
-	    <artifactId>spring-boot-starter-log4j2</artifactId>
-	</dependency>
 	<!-- 该依赖必加，里面有sping对schedule的支持 -->  
 	<dependency>
 		<groupId>org.springframework</groupId>  
@@ -93,21 +88,34 @@
 		    </exclusion>
 		</exclusions>
 	</dependency>
+	<!-- access log -->
+	<dependency>
+	    <groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-access</artifactId>
+	    <version>1.1.7</version>
+	</dependency>
 	
-	<!-- 		<dependency>
+	<!-- logback condition support, used to switch on/off file appender -->
+	<dependency>
+	    <groupId>org.codehaus.janino</groupId>
+	    <artifactId>janino</artifactId>
+	    <version>2.6.1</version>
+	</dependency>
+
+	<!-- <dependency>
 		<groupId>ch.qos.logback</groupId>
 		<artifactId>logback-classic</artifactId>
-		<version>1.0.11</version>
+            <version>1.1.7</version>
+	</dependency> -->
+	
+	<!-- <dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
 	</dependency> -->
 	<!-- mongo -->
 	<dependency>
 	    <groupId>org.springframework.boot</groupId>
 	    <artifactId>spring-boot-starter-data-mongodb</artifactId>
-	</dependency>
-	
-	<dependency>
-		<groupId>org.slf4j</groupId>
-		<artifactId>slf4j-api</artifactId>
 	</dependency>
 	
     <dependency>
