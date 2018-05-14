@@ -4,7 +4,7 @@
 
   <groupId>com.datayes</groupId>
   <artifactId>springboot-framework</artifactId>
-  <version>0.1.2</version>
+  <version>0.1.3-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>springboot-framework</name>
@@ -25,6 +25,7 @@
   <dependencies>
 
     <!-- spring-boot dependency begin -->
+    
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
@@ -35,48 +36,40 @@
                </exclusion>
            </exclusions> -->
     </dependency>
+    
     <!-- tag::actuator[] -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-actuator</artifactId>
-		  <!-- <exclusions>
-		    <exclusion>
-		      <groupId>org.springframework.boot</groupId>
-		      <artifactId>spring-boot-starter-logging</artifactId>
-		    </exclusion>
-		  </exclusions> -->
     </dependency>
-    <!-- end::actuator[] -->
+    
     <!-- tag::tests[] -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-test</artifactId>
-		  <!-- <exclusions>
-		    <exclusion>
-		      <groupId>org.springframework.boot</groupId>
-		      <artifactId>spring-boot-starter-logging</artifactId>
-		    </exclusion>
-		  </exclusions> -->
         <scope>test</scope>
     </dependency>
-    <!-- end::tests[] -->
     
+	<!-- dev tools -->
      <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-devtools</artifactId>
         <optional>true</optional>
 	</dependency>
 	
-       <!-- for ChainedTransactionManager configuration -->
+	<!-- for ChainedTransactionManager configuration -->
 	<dependency>
         <groupId>org.springframework.data</groupId>  
         <artifactId>spring-data-commons</artifactId>  
    	</dependency> 
+   	
 	<!-- 该依赖必加，里面有sping对schedule的支持 -->  
 	<dependency>
 		<groupId>org.springframework</groupId>  
 		<artifactId>spring-context-support</artifactId>  
-	</dependency> 
+	</dependency>
+	
+	<!-- timer scheduler -->
 	<dependency>
 	    <groupId>org.quartz-scheduler</groupId>
 	    <artifactId>quartz</artifactId>
@@ -88,18 +81,31 @@
 		    </exclusion>
 		</exclusions>
 	</dependency>
+	
+	<!-- mongo -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-data-mongodb</artifactId>
+	</dependency>
+	
+	<!-- front-end framework -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-thymeleaf</artifactId>
+	</dependency>
+	
+    <!-- spring-boot dependency end -->
+	
 	<!-- access log -->
 	<dependency>
 	    <groupId>ch.qos.logback</groupId>
 	    <artifactId>logback-access</artifactId>
-	    <version>1.1.7</version>
-	</dependency>
+	    </dependency>
 	
 	<!-- logback condition support, used to switch on/off file appender -->
 	<dependency>
 	    <groupId>org.codehaus.janino</groupId>
 	    <artifactId>janino</artifactId>
-	    <version>2.6.1</version>
 	</dependency>
 
 	<!-- <dependency>
@@ -112,11 +118,6 @@
 		<groupId>org.slf4j</groupId>
 		<artifactId>slf4j-api</artifactId>
 	</dependency> -->
-	<!-- mongo -->
-	<dependency>
-	    <groupId>org.springframework.boot</groupId>
-	    <artifactId>spring-boot-starter-data-mongodb</artifactId>
-	</dependency>
 	
     <dependency>
       <groupId>junit</groupId>
