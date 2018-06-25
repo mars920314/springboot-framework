@@ -2,9 +2,9 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.datayes</groupId>
+  <groupId>mars</groupId>
   <artifactId>springboot-framework</artifactId>
-  <version>0.1.3-SNAPSHOT</version>
+  <version>0.2.0</version>
   <packaging>jar</packaging>
 
   <name>springboot-framework</name>
@@ -100,7 +100,7 @@
 	<dependency>
 	    <groupId>ch.qos.logback</groupId>
 	    <artifactId>logback-access</artifactId>
-	    </dependency>
+	</dependency>
 	
 	<!-- logback condition support, used to switch on/off file appender -->
 	<dependency>
@@ -129,32 +129,11 @@
   
 
   <repositories>
-      <repository>
-          <id>search</id>
-          <url>http://artifactory.datayes.com/artifactory/simple/search-release</url>
-      </repository>
-      <repository>
-          <id>rrp</id>
-          <url>http://artifactory.datayes.com/artifactory/rrp-release</url>
-      </repository>
-      <repository>
-          <id>gaea</id>
-          <url>http://artifactory.datayes.com/artifactory/simple/gaea-release</url>
-      </repository>
-
-      <repository>
-          <snapshots>
-              <enabled>false</enabled>
-          </snapshots>
-          <id>central</id>
-          <name>libs-release</name>
-          <url>http://artifactory.datayes.com/artifactory/libs-release</url>
-      </repository>
-      <repository>
-          <id>snapshots</id>
-          <name>libs-snapshot</name>
-          <url>http://artifactory.datayes.com/artifactory/libs-snapshot</url>
-      </repository>
+	<repository>
+	 <id>alimaven</id>
+	 <name>aliyun maven</name>
+	 <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+	</repository>
   </repositories>
     
     <build>
